@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/07 13:49:05 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/07 14:55:45 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(int ac, char **av){
 	
 	if (ac != 2)
 		exit_with_message("Invalid Number of Arguments.\n", 1);
+	parse_map(av[1]);
 	
     return 2;
 }
