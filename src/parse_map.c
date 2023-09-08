@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/08 16:45:50 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/08 17:50:12 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,28 @@ void	get_texture(t_texture *texture,char *line, char	first_char)
 
 // }
 
+void	pre_valid_check(char first_char, int *found_map, int missing_texture)
+{
+	if (!ft_strchr("NSFWCE1", first_char))
+		exit_with_message("Invalid Map\n", 3);
+	if (first_char == '1' && *found_map == 0)
+		*found_map = 1;
+	if (*found_map == 2 && first_char != '\0')
+		exit_with_message("Invalid Map\n", 3);
+	if (first_char == '\0' && *found_map == 1)
+	{
+		if (*found_map == 1)
+			*found_map = 2;
+		return ;
+	}
+	else if (*found_map == 1 && first_char != '1')
+	{
+		exit_with_message("Invalid Map\n", 3);
+	}
+	if (first_char == '1' && missing_texture)
+		exit_with_message("Invalid Map.\n", 4);
+}
+
 void	analyze_line(t_variables *variables, char *line, int *found_map)
 {
 	char	first_char;
@@ -50,24 +72,10 @@ void	analyze_line(t_variables *variables, char *line, int *found_map)
 	trimmed = ft_strtrim(line, SPACES);
 	first_char = trimmed[0];
 	free(trimmed);
-	if (!ft_strchr("NSFWCE1", first_char))
-		exit_with_message("Invalid Map\n", 3);
-	if (first_char == '1' && *found_map == 0)
-		*found_map = 1;
-	if (*found_map == 2 && first_char != '\0')
-		exit_with_message("Invalid Map\n", 3);
-	if (first_char == '\0')
-	{
-		if (*found_map == 1)
-			*found_map = 2;
-		return ;
-	}
 	missing_texture = missing_textures(&variables->texture);
-	if (first_char == '1' && missing_texture)
-		exit_with_message("Invalid Map.\n", 4);
+	pre_valid_check(first_char, found_map, missing_texture);
 	if (missing_texture)
 		get_texture(&variables->texture, line, first_char);
-	
 }
 
 int	parse_map(t_variables *variables, char *filename)
