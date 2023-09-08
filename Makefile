@@ -3,7 +3,7 @@ NAME		:= cub3d
 SRCS_DIR	:= ./src
 OBJS_DIR	:= ./obj
 
-SRCS		:=	main.c parse_map.c inits.c exits.c
+SRCS		:=	main.c parse_map.c inits.c exits.c parse_utils.c free.c
 				
 OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
