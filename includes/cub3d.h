@@ -6,13 +6,14 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/08 11:48:04 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/08 15:47:22 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
-# define SPACES " 	\r\n"
+# define SPACES " \f\v\t\r\n"
+# define FIRST_CHARACTER "NSEWFC"
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -53,11 +54,19 @@ void	init_variables(t_variables *variables);
 void	init_texture(t_texture *texture);
 void	init_map(t_map *map);
 
+//parse_map.c
+int		parse_map(t_variables *variables, char *file_name);
+
+// utils.c
+int		ft_isspace(int c);
+char	check_first_letter(char   *line, char	*valid_set);
+int		missing_textures(t_texture *texture);
+
+// free.c
+void	free_texture(t_texture *texture);
+void	free_map(char	**map);
+
 // exits.c
 void	exit_with_message(char *message, int exit_code);
-
-//parse_map.c
-int		parse_map(char *file_name);
-
 
 #endif
