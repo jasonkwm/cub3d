@@ -6,13 +6,14 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:41:42 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/07 13:45:04 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/08 09:41:20 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void    exit_with_message(char *message, int exit_code) {
-    ft_putstr_fd(message, 2);
-    exit(exit_code);
+void	exit_with_message(char *message, int exit_code)
+{
+	ft_putstr_fd(message, 2);
+	exit(exit_code);
 }
