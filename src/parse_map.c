@@ -6,7 +6,14 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:11:25 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:57:03 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "cub3d.h"
+
+void	get_map(t_map *map, char *line)
+{
+	(void)map;
+	(void)line;
+}

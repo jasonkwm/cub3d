@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:48:12 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:56:34 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,18 @@ void	init_variables(t_variables *variables);
 void	init_texture(t_texture *texture);
 void	init_map(t_map *map);
 
-//main_parser.c
+// main_parser.c
 
 int		parse_map(t_variables *variables, char *file_name);
 
-//parse_textures.c
+// parse_textures.c
 
 void	check_n_append(t_texture *tex, char **check, char *trimmed, char c);
 void	get_texture(t_texture *texture, char *line, char first_char);
+
+// parse_map.c
+
+void	get_map(t_map *map, char *line);
 
 // utils.c
 

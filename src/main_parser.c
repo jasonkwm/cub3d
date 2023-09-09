@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:42:09 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:55:50 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ void	analyze_line(t_variables *variables, char *line, int *found_map)
 	if (miss_texture)
 		get_texture(&variables->texture, line, first_char);
 	else
-		printf("Here: %c\n", first_char);
-		// get_map(&variables->map, line);
-
+		get_map(&variables->map, line);
 }
 
 int	parse_map(t_variables *variables, char *filename)
@@ -84,7 +82,6 @@ int	parse_map(t_variables *variables, char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
-		// ft_putstr_fd(line, 1);
 		analyze_line(variables, line, &found_map);
 		free(line);
 		line = get_next_line(fd);
