@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/08 17:47:47 by jakoh            ###   ########.fr       */
+/*   Created: 2023/09/08 14:12:48 by jakoh             #+#    #+#             */
+/*   Updated: 2023/09/09 10:48:06 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h" 
+#include "cub3d.h"
 
-int main(int ac, char **av)
+int		miss_textures(t_texture *texture)
 {
-	t_variables	variables;
-
-	(void)variables;
-	if (ac != 2)
-		exit_with_message("Invalid Number of Arguments.\n", 1);
-	init_variables(&variables);
-	parse_map(&variables, av[1]);
-	free_texture(&variables.texture);
-	// system("leaks cub3d");
-	printf("correct\n");
-    return 2;
+	if (!texture->north || !texture->south || !texture->east || !texture->west
+		|| !texture->floor || !texture->ceiling)
+		return (1);
+	return (0);
 }
