@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:16:27 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:41:47 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,27 @@
  */
 void	check_n_append(t_texture *tex, char **check, char *trimmed, char c)
 {
-	int	duplicate;
+	int		error;
+	char	*get_path;
 
-	duplicate = 0;
+	error = 0;
+	get_path = NULL;
 	if (*check != NULL)
+		error = 5;
+	else if (c == 'F' || c == 'C')
+		get_path = ft_strtrim(trimmed + 1, SPACES);
+	else
+		get_path = ft_strtrim(trimmed + 2, SPACES);
+	if (error == 0 && get_path != NULL && *get_path != '\0')
+		*check = get_path;
+	else
 	{
 		free_texture(tex);
 		free(trimmed);
-		exit_with_message("Error: Found Duplicate Textures\n", 5);
+		if (get_path)
+			free(get_path);
+		exit_with_message("Error: Invalid Textures\n", 6);
 	}
-	if (c == 'F' || c == 'C')
-		*check = ft_strtrim(trimmed + 1, SPACES);
-	else
-		*check = ft_strtrim(trimmed + 2, SPACES);
-
 }
 
 void	get_texture(t_texture *texture,char *line, char	first_char)
@@ -51,7 +58,10 @@ void	get_texture(t_texture *texture,char *line, char	first_char)
 		else if (first_char == 'S')
 			check_n_append(texture, &texture->south, trimmed, first_char);
 		else if (first_char == 'E')
+		{
+			printf("east: %s, %s, %c\n", texture->east, trimmed, first_char);
 			check_n_append(texture, &texture->east, trimmed, first_char);
+		}
 		else if (first_char == 'W')
 			check_n_append(texture, &texture->west, trimmed, first_char);
 		else if (first_char == 'F')

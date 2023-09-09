@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 09:50:19 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:42:09 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@
 void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 {
 	if (!ft_strchr("NSFWCE1", first_char))
-		exit_with_message("Error: Invalid Map\n", 3);
+		exit_with_message("Error: Invalid Map.\n", 3);
 	if (first_char == '1' && *found_map == 0)
 		*found_map = 1;
 	if (*found_map == 2 && first_char != '\0')
-		exit_with_message("Error: Invalid Map\n", 3);
+		exit_with_message("Error: Invalid Map.\n", 3);
 	if (first_char == '\0' && *found_map == 1)
 	{
 		if (*found_map == 1)
@@ -42,10 +42,12 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 	}
 	else if (*found_map == 1 && first_char != '1')
 	{
-		exit_with_message("Error: Invalid Map\n", 3);
+		exit_with_message("Error: Invalid Map.\n", 3);
 	}
 	if (first_char == '1' && miss_texture)
-		exit_with_message("Error: Invalid Map.\n", 4);
+		exit_with_message("Error: Missing Texture.\n", 4);
+	if (!miss_texture && ft_strchr("NSFWCE", first_char))
+		exit_with_message("Error: Extra Texture.\n", 5);
 }
 
 void	analyze_line(t_variables *variables, char *line, int *found_map)
@@ -64,7 +66,8 @@ void	analyze_line(t_variables *variables, char *line, int *found_map)
 	if (miss_texture)
 		get_texture(&variables->texture, line, first_char);
 	else
-		get_map(&variables->map, line);
+		printf("Here: %c\n", first_char);
+		// get_map(&variables->map, line);
 
 }
 
