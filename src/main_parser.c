@@ -6,16 +6,11 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:55:50 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 11:26:58 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-// void	get_map(t_map *map, char *line)
-// {
-
-// }
 
 /**
  * @brief Checks for valid character \n
