@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 12:03:54 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 13:43:52 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,13 @@ void	analyze_line(t_variables *variables, char *line, int *found_map)
 
 int	parse_map(t_variables *variables, char *filename)
 {
-	int		fd;
-	char	*line;
-	int		found_map;
+	int			fd;
+	int			found_map;
+	char		*line;
+	t_link_map	*link_map;
 
 	found_map = 0;
+	link_map = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		exit_with_message("Error: Cannot Read File.\n", 2);

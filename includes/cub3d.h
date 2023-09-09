@@ -6,14 +6,13 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:56:34 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 13:42:59 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
-# define FIRST_CHARACTER "NSEWFC"
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -39,6 +38,12 @@ typedef struct s_map
 	int		max_width;
 
 }	t_map;
+
+typedef struct s_link_map
+{
+	char		*map_line;
+	t_link_map	*next;
+}	t_link_map;
 
 typedef struct s_variables
 {
