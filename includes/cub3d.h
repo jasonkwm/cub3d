@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:15:58 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 10:48:12 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ void	get_texture(t_texture *texture, char *line, char first_char);
 
 // utils.c
 
-int		ft_isspace(int c);
-char	check_first_letter(char *line, char *valid_set);
 int		miss_textures(t_texture *texture);
 
 // free.c
