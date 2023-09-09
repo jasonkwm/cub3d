@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 13:43:52 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 13:46:47 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ int	parse_map(t_variables *variables, char *filename)
 	t_link_map	*link_map;
 
 	found_map = 0;
-	link_map = NULL;
+	link_map = ft_calloc(sizeof(t_link_map), 1);
+	link_map->next = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		exit_with_message("Error: Cannot Read File.\n", 2);
