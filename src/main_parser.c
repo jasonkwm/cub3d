@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 11:26:58 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 12:03:54 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  * @brief Checks for valid character \n
  * 		  check if found map & check if map has ended \n
  * 		  check if map found before all texture \n
+ * 		  char *slp = save line space;
  * 
  * @param first_char first character of line read
  * @param found_map tracks map, 0 = no, 1 = yes, 2 = map ended
@@ -23,6 +24,9 @@
  */
 void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 {
+	char	*slp;
+
+	slp = ft_strchr("NSFWCE", first_char);
 	if (!ft_strchr("NSFWCE1", first_char))
 		exit_with_message("Error: Invalid Map.\n", 3);
 	if (first_char == '1' && *found_map == 0)
@@ -41,7 +45,7 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 	}
 	if (first_char == '1' && miss_texture)
 		exit_with_message("Error: Missing Texture.\n", 4);
-	if (!miss_texture && ft_strchr("NSFWCE", first_char))
+	if (!miss_texture && slp && *slp != '\0')
 		exit_with_message("Error: Extra Texture.\n", 5);
 }
 

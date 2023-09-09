@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:56:06 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/08 15:29:43 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 12:05:54 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	free_texture(t_texture *texture)
 void	free_map(char	**map)
 {
 	int	i;
+
 	if (!map)
 		return ;
 	i = -1;
