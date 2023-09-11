@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 13:42:59 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 13:34:52 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	init_map(t_map *map);
 
 // main_parser.c
 
-int		parse_map(t_variables *variables, char *file_name);
+int		parse_file(t_variables *variables, char *file_name);
 
 // parse_textures.c
 
@@ -70,7 +70,7 @@ void	get_texture(t_texture *texture, char *line, char first_char);
 
 // parse_map.c
 
-void	get_map(t_map *map, char *line);
+void	get_map(char *line, t_link_map **link_map);
 
 // utils.c
 

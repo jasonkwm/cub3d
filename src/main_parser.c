@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 13:46:47 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 13:36:16 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 		exit_with_message("Error: Extra Texture.\n", 5);
 }
 
-void	analyze_line(t_variables *variables, char *line, int *found_map)
+void	analyze_line(t_variables *var, char *line, int *f_m, t_link_map **l_m)
 {
 	char	first_char;
 	char	*trimmed;
@@ -58,17 +58,17 @@ void	analyze_line(t_variables *variables, char *line, int *found_map)
 	trimmed = ft_strtrim(line, SPACES);
 	first_char = trimmed[0];
 	free(trimmed);
-	miss_texture = miss_textures(&variables->texture);
-	pre_valid_check(first_char, found_map, miss_texture);
+	miss_texture = miss_textures(&var->texture);
+	pre_valid_check(first_char, f_m, miss_texture);
 	if (first_char == '\0')
 		return ;
 	if (miss_texture)
-		get_texture(&variables->texture, line, first_char);
+		get_texture(&var->texture, line, first_char);
 	else
-		get_map(&variables->map, line);
+		get_map( line, l_m);
 }
 
-int	parse_map(t_variables *variables, char *filename)
+int	parse_file(t_variables *variables, char *filename)
 {
 	int			fd;
 	int			found_map;
@@ -84,11 +84,10 @@ int	parse_map(t_variables *variables, char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
-		analyze_line(variables, line, &found_map);
+		analyze_line(variables, line, &found_map, &link_map);
 		free(line);
 		line = get_next_line(fd);
 	}
-	(void)variables;
 	close(fd);
 	return (0);
 }
