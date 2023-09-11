@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 14:07:51 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 15:14:14 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # include <math.h>
 # include <fcntl.h>
 # include "libft.h"
+
+typedef struct s_list_map
+{
+	char		*map_line;
+	struct s_list_map	*next;
+}	t_list_map;
 
 typedef struct s_texture
 {
@@ -38,12 +44,6 @@ typedef struct s_map
 	int		max_width;
 
 }	t_map;
-
-typedef struct s_list_map
-{
-	char		*map_line;
-	struct s_list_map	*next;
-}	t_list_map;
 
 typedef struct s_variables
 {
@@ -71,6 +71,8 @@ void	get_texture(t_texture *texture, char *line, char first_char);
 // parse_map.c
 
 void	get_map(char *line, t_list_map **list_map);
+void	get_map_size(t_variables *variables, t_list_map **list_map);
+void	build_map(t_variables *variables, t_list_map **list_map);
 
 // utils.c
 
