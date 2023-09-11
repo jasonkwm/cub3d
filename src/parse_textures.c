@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:44:29 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/09 12:04:41 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	check_n_append(t_texture *tex, char **check, char *trimmed, char c)
 	}
 }
 
-void	get_texture(t_texture *texture,char *line, char	first_char)
+void	get_texture(t_texture *texture, char *line, char first_char)
 {
 	char	*trimmed;
 

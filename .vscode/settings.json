@@ -6,6 +6,7 @@
         "math.h": "c",
         "unistd.h": "c",
         "mlx.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "ios": "c"
     }
 }

@@ -6,14 +6,13 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 10:48:12 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 17:01:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
-# define FIRST_CHARACTER "NSEWFC"
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -21,6 +20,12 @@
 # include <math.h>
 # include <fcntl.h>
 # include "libft.h"
+
+typedef struct s_list_map
+{
+	char		*map_line;
+	struct s_list_map	*next;
+}	t_list_map;
 
 typedef struct s_texture
 {
@@ -35,8 +40,8 @@ typedef struct s_texture
 typedef struct s_map
 {
 	char	**map;
-	int		max_height;
-	int		max_width;
+	int		height;
+	int		width;
 
 }	t_map;
 
@@ -54,14 +59,26 @@ void	init_variables(t_variables *variables);
 void	init_texture(t_texture *texture);
 void	init_map(t_map *map);
 
-//main_parser.c
+// main_parser.c
 
-int		parse_map(t_variables *variables, char *file_name);
+int		parse_file(t_variables *variables, char *file_name);
 
-//parse_textures.c
+// parse_textures.c
 
 void	check_n_append(t_texture *tex, char **check, char *trimmed, char c);
 void	get_texture(t_texture *texture, char *line, char first_char);
+
+// parse_map.c
+
+void	get_map(char *line, t_list_map **list_map);
+void	get_map_size(t_variables *variables, t_list_map **list_map);
+void	build_map(t_variables *variables, t_list_map **list_map);
+
+// parse_map_utils.c
+
+void	malloc_and_fill_map(t_map *map, t_list_map **list_map);
+void	strlcpy_custom(char *dst, const char *src, int size);
+void	lstadd_back(t_list_map **lst, t_list_map *new);
 
 // utils.c
 
@@ -71,6 +88,7 @@ int		miss_textures(t_texture *texture);
 
 void	free_texture(t_texture *texture);
 void	free_map(char	**map);
+void	free_list_map(t_list_map **list_map);
 
 // exits.c
 
