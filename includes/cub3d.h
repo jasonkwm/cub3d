@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 13:34:52 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 13:47:09 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_map
 typedef struct s_link_map
 {
 	char		*map_line;
-	t_link_map	*next;
+	struct s_link_map	*next;
 }	t_link_map;
 
 typedef struct s_variables
