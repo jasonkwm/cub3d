@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/08 10:47:52 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 17:01:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	init_texture(t_texture *texture)
 
 void	init_map(t_map *map)
 {
-	map->max_height = 0;
-	map->max_width = 0;
+	map->height = 0;
+	map->width = 0;
 	map->map = NULL;
 }
 

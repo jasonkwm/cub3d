@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 15:14:14 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 17:01:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ typedef struct s_texture
 typedef struct s_map
 {
 	char	**map;
-	int		max_height;
-	int		max_width;
+	int		height;
+	int		width;
 
 }	t_map;
 
@@ -73,6 +73,12 @@ void	get_texture(t_texture *texture, char *line, char first_char);
 void	get_map(char *line, t_list_map **list_map);
 void	get_map_size(t_variables *variables, t_list_map **list_map);
 void	build_map(t_variables *variables, t_list_map **list_map);
+
+// parse_map_utils.c
+
+void	malloc_and_fill_map(t_map *map, t_list_map **list_map);
+void	strlcpy_custom(char *dst, const char *src, int size);
+void	lstadd_back(t_list_map **lst, t_list_map *new);
 
 // utils.c
 

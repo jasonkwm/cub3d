@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:56:06 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 14:07:37 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 17:04:15 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	free_map(char	**map)
 		free(map[i]);
 	free(map);
 }
-
 
 void	free_list_map(t_list_map **list_map)
 {

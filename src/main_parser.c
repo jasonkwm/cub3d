@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 15:37:18 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 17:04:03 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ int	parse_file(t_variables *variables, char *filename)
 		line = get_next_line(fd);
 	}
 	build_map(variables, &list_map);
-
 	free_list_map(&list_map);
 	close(fd);
 	return (0);
