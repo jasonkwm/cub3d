@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 13:47:09 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 14:07:51 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ typedef struct s_map
 
 }	t_map;
 
-typedef struct s_link_map
+typedef struct s_list_map
 {
 	char		*map_line;
-	struct s_link_map	*next;
-}	t_link_map;
+	struct s_list_map	*next;
+}	t_list_map;
 
 typedef struct s_variables
 {
@@ -70,7 +70,7 @@ void	get_texture(t_texture *texture, char *line, char first_char);
 
 // parse_map.c
 
-void	get_map(char *line, t_link_map **link_map);
+void	get_map(char *line, t_list_map **list_map);
 
 // utils.c
 
@@ -80,6 +80,7 @@ int		miss_textures(t_texture *texture);
 
 void	free_texture(t_texture *texture);
 void	free_map(char	**map);
+void	free_list_map(t_list_map **list_map);
 
 // exits.c
 

@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 13:36:16 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/11 14:17:41 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,15 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
 		exit_with_message("Error: Extra Texture.\n", 5);
 }
 
-void	analyze_line(t_variables *var, char *line, int *f_m, t_link_map **l_m)
+/**
+ * @brief 
+ * 
+ * @param var variables
+ * @param line line
+ * @param f_m found_map
+ * @param l_m list_map
+ */
+void	analyze_line(t_variables *var, char *line, int *f_m, t_list_map **l_m)
 {
 	char	first_char;
 	char	*trimmed;
@@ -65,7 +73,7 @@ void	analyze_line(t_variables *var, char *line, int *f_m, t_link_map **l_m)
 	if (miss_texture)
 		get_texture(&var->texture, line, first_char);
 	else
-		get_map( line, l_m);
+		get_map(line, l_m);
 }
 
 int	parse_file(t_variables *variables, char *filename)
@@ -73,21 +81,21 @@ int	parse_file(t_variables *variables, char *filename)
 	int			fd;
 	int			found_map;
 	char		*line;
-	t_link_map	*link_map;
+	t_list_map	*list_map;
 
 	found_map = 0;
-	link_map = ft_calloc(sizeof(t_link_map), 1);
-	link_map->next = NULL;
+	list_map = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		exit_with_message("Error: Cannot Read File.\n", 2);
 	line = get_next_line(fd);
 	while (line)
 	{
-		analyze_line(variables, line, &found_map, &link_map);
+		analyze_line(variables, line, &found_map, &list_map);
 		free(line);
 		line = get_next_line(fd);
 	}
+	free_list_map(&list_map);
 	close(fd);
 	return (0);
 }
