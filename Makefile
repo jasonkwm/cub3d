@@ -4,13 +4,14 @@ SRCS_DIR	:= ./src
 OBJS_DIR	:= ./obj
 
 SRCS		:=	main.c  inits.c exits.c free.c \
-				main_parser.c parse_utils.c parse_textures.c  parse_map.c parse_map_utils.c \
+				main_parser.c parse_utils.c parse_textures.c \
+				parse_map.c parse_map_utils.c check_map.c \
 				
 OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
 CC			:= gcc -Wall -Werror -Wextra 
 
-FLAGS		:= # -fsanitize=address
+FLAGS		:= -fsanitize=address
 MFLAGS 		:= -framework OpenGL -framework AppKit
 
 # -L "folder" to looks for library in the folder
@@ -38,6 +39,7 @@ all	: $(NAME)
 # "-I" is  to look for header file in folder
 # "$<" is to match prerequisites
 # "$@" is to match target
+# '@' before every recipe to silence it in terminal
 $(NAME)	: $(OBJS)
 	make -C ./libft
 	$(CC) $(FLAGS) $(OBJS) $(INCLUDES) $(LIBRARY) -o $@
