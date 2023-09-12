@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:29:40 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 15:31:43 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	check_walls(t_map *map)
 
 	invalid = 0;
 	flood_field(map, 0, 0, &invalid);
+	if (invalid > 0)
+		exit_with_message("Invalid Map.\n", 9);
 	flood_inside_map(map, &invalid);
 }
 
