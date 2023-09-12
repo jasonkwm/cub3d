@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 14:16:43 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 15:24:51 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	lstadd_back(t_list_map **lst, t_list_map *new);
 void	check_valid_characters(t_map *map);
 void	check_walls(t_map *map);
 void	flood_field(t_map *map, int curRow, int curCol, int *invalid);
+void	flood_inside_map(t_map *map, int *invalid);
 
 // utils.c
 

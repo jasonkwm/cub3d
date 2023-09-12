@@ -6,11 +6,21 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 14:37:42 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 15:29:40 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	check_walls(t_map *map)
+{
+	int	invalid;
+
+	invalid = 0;
+	flood_field(map, 0, 0, &invalid);
+	flood_inside_map(map, &invalid);
+}
+
 
 void	check_valid_characters(t_map *map)
 {
@@ -39,16 +49,24 @@ void	check_valid_characters(t_map *map)
 		exit_with_message("Invalid Number of Players.\n", 8);
 }
 
-void	check_walls(t_map *map)
+void	flood_inside_map(t_map *map, int *invalid)
 {
-	int	invalid;
+	int	i;
+	int	j;
 
-	invalid = 0;
-	flood_field(map, 0, 0, &invalid);
-	printf("invalid: %i\n", invalid);
+	i = -1;
+	while (map->map[++i])
+	{
+		j = -1;
+		while (map->map[i][++j])
+		{
+			if (map->map[i][j] == ' ')
+				flood_field(map, i, j, invalid);
+		}
+	}
 }
 
-void	flood_field(t_map *map, int curRow, int curCol, int *invalid)
+void	flood_field(t_map *map, int curCol, int curRow, int *invalid)
 {
 	if (curRow < 0 || curRow >= map->width || curCol < 0
 		|| curCol >= map->height)
@@ -60,8 +78,8 @@ void	flood_field(t_map *map, int curRow, int curCol, int *invalid)
 	if (*invalid > 0)
 		return ;
 	map->map[curCol][curRow] = '-';
-	flood_field(map, curRow - 1, curCol, invalid);
-	flood_field(map, curRow + 1, curCol, invalid);
-	flood_field(map, curRow, curCol + 1, invalid);
-	flood_field(map, curRow, curCol - 1, invalid);
+	flood_field(map, curCol - 1, curRow, invalid);
+	flood_field(map, curCol + 1, curRow, invalid);
+	flood_field(map, curCol, curRow + 1, invalid);
+	flood_field(map, curCol, curRow - 1, invalid);
 }
