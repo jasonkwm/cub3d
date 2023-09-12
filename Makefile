@@ -39,6 +39,7 @@ all	: $(NAME)
 # "-I" is  to look for header file in folder
 # "$<" is to match prerequisites
 # "$@" is to match target
+# '@' before every recipe to silence it in terminal
 $(NAME)	: $(OBJS)
 	make -C ./libft
 	$(CC) $(FLAGS) $(OBJS) $(INCLUDES) $(LIBRARY) -o $@
