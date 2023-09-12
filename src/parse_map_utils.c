@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:57:09 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 17:03:57 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 12:40:20 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	malloc_and_fill_map(t_map *map, t_list_map **list_map)
 	while (++i < map->height)
 	{
 		map->map[i] = ft_calloc(map->width + 1, sizeof(char));
-		ft_memset(map->map[i], '-', map->width);
+		ft_memset(map->map[i], ' ', map->width);
 		if (i > 0 && i < map->height -1)
 		{
 			len = ft_strlen(temp->map_line);

@@ -6,13 +6,14 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 17:01:53 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 13:27:35 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
+# define CURRENT_EXIT_CODE 8
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -79,6 +80,9 @@ void	build_map(t_variables *variables, t_list_map **list_map);
 void	malloc_and_fill_map(t_map *map, t_list_map **list_map);
 void	strlcpy_custom(char *dst, const char *src, int size);
 void	lstadd_back(t_list_map **lst, t_list_map *new);
+
+// check_map.c
+void	check_valid_characters(t_map *map);
 
 // utils.c
 
