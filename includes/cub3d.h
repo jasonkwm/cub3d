@@ -6,14 +6,14 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:24:51 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 15:39:03 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
-# define CURRENT_EXIT_CODE 8
+# define CURRENT_EXIT_CODE 9
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
