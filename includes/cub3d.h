@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 13:27:35 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:16:43 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ typedef struct s_map
 	char	**map;
 	int		height;
 	int		width;
-
+	int		pX;
+	int		pY;
 }	t_map;
 
 typedef struct s_variables
@@ -83,6 +84,8 @@ void	lstadd_back(t_list_map **lst, t_list_map *new);
 
 // check_map.c
 void	check_valid_characters(t_map *map);
+void	check_walls(t_map *map);
+void	flood_field(t_map *map, int curRow, int curCol, int *invalid);
 
 // utils.c
 

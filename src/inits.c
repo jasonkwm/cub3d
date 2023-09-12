@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 17:01:53 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:14:27 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	init_map(t_map *map)
 {
 	map->height = 0;
 	map->width = 0;
+	map->pX = 0;
+	map->pY = 0;
 	map->map = NULL;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 17:04:25 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:33:04 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ int	main(int ac, char **av)
 	parse_file(&variables, av[1]);
 	free_texture(&variables.texture);
 	int i = -1;
+	printf("--------------------------------------\n");
 	while (variables.map.map[++i])
 	{
-		printf("%s\n", variables.map.map[i]);
+		printf("|%s|\n", variables.map.map[i]);
 	}
+	printf("--------------------------------------\n");
 	free_map(variables.map.map);
-	system("leaks cub3d");
+	// system("leaks cub3d");
 	return (2);
 }

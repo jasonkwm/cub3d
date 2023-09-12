@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 13:27:39 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:35:40 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	build_map(t_variables *variables, t_list_map **list_map)
 	get_map_size(variables, list_map);
 	malloc_and_fill_map(&variables->map, list_map);
 	check_valid_characters(&variables->map);
+	check_walls(&variables->map);
 }
