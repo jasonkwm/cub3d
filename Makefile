@@ -42,7 +42,7 @@ all	: $(NAME)
 # '@' before every recipe to silence it in terminal
 $(NAME)	: $(OBJS)
 	make -C ./libft
-	$(CC) $(FLAGS) $(OBJS) $(INCLUDES) $(LIBRARY) -o $@
+	$(CC) $(FLAGS) $(MFLAGS) $(OBJS) $(INCLUDES) $(LIBRARY) -o $@
 	@echo "$(GREEN)Cub3D Compiled Successful.$(NC)"
 
 # "mkdir -p" creates dir if necessary, if dir exist, no error specified
