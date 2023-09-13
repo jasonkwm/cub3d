@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 22:13:14 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:50:35 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,26 @@ void	init_map(t_map *map)
 
 int	init_mlx(t_variables *var)
 {
+	t_img	mlx;
+
+	ft_bzero(&mlx, sizeof(mlx));
+	var->screen = &mlx;
 	var->screen->mlx = mlx_init();
 	if (!(var->screen->mlx))
 		return (1);
-	var->screen->win = mlx_new_window(var->screen->mlx, var->max_width,
-			var->max_height, "cub3d");
-	var->screen->img = mlx_new_image(var->screen->mlx, var->max_width,
-			var->max_height);
+	var->screen->win = mlx_new_window(var->screen->mlx, (int)var->max_width,
+			(int)var->max_height, "cub3d");
+	var->screen->img = mlx_new_image(var->screen->mlx, (int)var->max_width,
+			(int)var->max_height);
 	var->screen->addr = mlx_get_data_addr(var->screen->img, &var->screen->bpp,
 			&var->screen->line_length, &var->screen->endian);
 	return (0);
 }
+
+// void	init_raycast(t_variables *variables)
+// {
+
+// }
 
 void	init_variables(t_variables *variables)
 {
@@ -65,6 +74,7 @@ void	init_variables(t_variables *variables)
 	if (init_mlx(variables) == 1)
 		return ;
 	variables->window = NULL;
+	// init_raycast(&variables);
 	init_texture(&variables->texture);
 	init_map(&variables->map);
 }

@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 21:36:42 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/14 01:05:50 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,34 @@ typedef struct s_map
 	int					px;
 	int					py;
 }						t_map;
+typedef struct s_raycast
+{
+	double				pos_x;
+	double				pos_y;
+	double				dir_x;
+	double				dir_y;
+	double				plane_x;
+	double				plane_y;
+	double				ray_x;
+	double				ray_y;
+	double				cam_x;
+	double				side_dst_x;
+	double				side_dst_y;
+	double				d_dst_x;
+	double				d_dst_y;
+	double				perp_wall;
+	int					map_x;
+	int					map_y;
+	int					step_x;
+	int					step_y;
+	int					hit;
+	int					side;
+	int					line_height;
+	int					start;
+	int					end;
+	double				speed;
+	double				rot_speed;
+}						t_raycast;
 
 typedef struct s_variables
 {

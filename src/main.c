@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 22:20:25 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:22:01 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	ft_bzero(&variables, sizeof(variables));
 	init_variables(&variables);
 	parse_file(&variables, av[1]);
-	mlx_loop(variables.screen->mlx);
+	// printf("%s %s\n", variables.texture.floor, variables.texture.east);
 	free_texture(&variables.texture);
 	i = -1;
 	// printf("--------------------------------------\n");

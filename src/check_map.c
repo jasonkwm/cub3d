@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:39:14 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/13 16:25:52 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	check_valid_characters(t_map *map)
 			else if (ft_strchr("NSEW", map->map[i][j]))
 			{
 				player++;
-				map->pX = j;
-				map->pY = i;
+				map->px = j;
+				map->py = i;
 			}
 		}
 	}
