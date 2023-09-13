@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/13 12:04:12 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/13 12:19:08 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int		parse_file(t_variables *variables, char *file_name);
 
 // parse_textures.c
 
+int		miss_textures(t_texture *texture);
 void	check_n_append(t_texture *tex, char **check, char *trimmed, char c);
 void	get_texture(t_texture *texture, char *line, char first_char);
 
@@ -87,10 +88,6 @@ void	check_valid_characters(t_map *map);
 void	check_walls(t_map *map);
 void	flood_field(t_map *map, int curRow, int curCol, int *invalid);
 void	flood_inside_map(t_map *map, int *invalid);
-
-// utils.c
-
-int		miss_textures(t_texture *texture);
 
 // free.c
 
