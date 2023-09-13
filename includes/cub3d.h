@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:39:03 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/13 12:04:12 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
 # define CURRENT_EXIT_CODE 9
-# include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
 # include <fcntl.h>
 # include "libft.h"
+# include "mlx.h"
 
 typedef struct s_list_map
 {
@@ -101,5 +101,7 @@ void	free_list_map(t_list_map **list_map);
 // exits.c
 
 void	exit_with_message(char *message, int exit_code);
+void	exit_program(t_variables *variables, char *message, int exit_code);
+int		exit_on_click(t_variables *variables);
 
 #endif
