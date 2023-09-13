@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 14:33:04 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/13 12:01:49 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	main(int ac, char **av)
 	init_variables(&variables);
 	parse_file(&variables, av[1]);
 	free_texture(&variables.texture);
+	variables.mlx = mlx_init();
+	variables.window = mlx_new_window(variables.mlx, 1920, 1080, "Pet Puppy 3D.");
+	mlx_hook(variables.window, 17, (1L << 0), exit_on_click, &variables);
+	mlx_loop(variables.mlx);
 	int i = -1;
 	printf("--------------------------------------\n");
 	while (variables.map.map[++i])
