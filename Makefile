@@ -11,14 +11,14 @@ OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
 CC			:= gcc -Wall -Werror -Wextra 
 
-FLAGS		:= -fsanitize=address
+FLAGS		:= # -fsanitize=address
 MFLAGS 		:= -framework OpenGL -framework AppKit
 
 # -L "folder" to looks for library in the folder
 # -l(ft) to link library file. l replaces lib
 # -I is to look for header file in folder
 LIB_FT		:= -L libft -lft
-LIB_MLX		:= -L mlx -lmlx
+LIB_MLX		:= -L mlx -lmlx -framework OpenGL -framework AppKit
 
 LIBRARY		:= $(LIB_FT) $(LIB_MLX)
 INCLUDES	:= -I mlx -I libft -I includes
@@ -41,8 +41,9 @@ all	: $(NAME)
 # "$@" is to match target
 # '@' before every recipe to silence it in terminal
 $(NAME)	: $(OBJS)
-	make -C ./libft
-	$(CC) $(FLAGS) $(OBJS) $(INCLUDES) $(LIBRARY) -o $@
+	@echo "$(GREEN)Compiling Libft Library.$(NC)"
+	@make -C ./libft
+	$(CC) $(FLAGS) $(OBJS) $(LIBRARY) $(INCLUDES) -o $@
 	@echo "$(GREEN)Cub3D Compiled Successful.$(NC)"
 
 # "mkdir -p" creates dir if necessary, if dir exist, no error specified
