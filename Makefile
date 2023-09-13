@@ -41,7 +41,7 @@ all	: $(NAME)
 # "$@" is to match target
 # '@' before every recipe to silence it in terminal
 $(NAME)	: $(OBJS)
-	@echo "$(GREEN)Compiling Libft Library.$(NC)"
+	@echo "$(GREEN)Compiling Libft...$(NC)"
 	@make -C ./libft
 	$(CC) $(FLAGS) $(OBJS) $(LIBRARY) $(INCLUDES) -o $@
 	@echo "$(GREEN)Cub3D Compiled Successful.$(NC)"
