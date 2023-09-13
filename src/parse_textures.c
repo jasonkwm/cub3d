@@ -6,11 +6,25 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 12:04:41 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/13 12:18:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+/**
+ * @brief Returns 1 if theres missing Texture, 0 if all textures are found
+ * 
+ * @param texture 
+ * @return int
+ */
+int	miss_textures(t_texture *texture)
+{
+	if (!texture->north || !texture->south || !texture->east || !texture->west
+		|| !texture->floor || !texture->ceiling)
+		return (1);
+	return (0);
+}
 
 /**
  * @brief Check if texture has been found \n
