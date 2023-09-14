@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/13 14:58:39 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/14 14:47:46 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_texture
 	char	*south;
 	char	*east;
 	char	*west;
-	char	*floor;
-	char	*ceiling;
+	int		*floor;
+	int		*ceiling;
 }	t_texture;
 
 typedef struct s_map
@@ -48,6 +48,7 @@ typedef struct s_map
 	int		width;
 	int		pX;
 	int		pY;
+	char	facing_pos;
 }	t_map;
 
 typedef struct s_variables
@@ -71,8 +72,11 @@ int		parse_file(t_variables *variables, char *file_name);
 // parse_textures.c
 
 int		miss_textures(t_texture *texture);
-void	check_n_append(t_texture *tex, char **check, char *trimmed, char c);
+void	check_n_append(void **check, char *trimmed, char c);
 void	get_texture(t_texture *texture, char *line, char first_char);
+void	check_textures(void **check, char *get_path, char c);
+int	only_digits(char *str);
+void	check_rgb(void **check, char *texture);
 
 // parse_map.c
 

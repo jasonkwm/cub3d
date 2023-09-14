@@ -1,9 +1,9 @@
-NO ./path_to_the_north_texture
-                SO              ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-   EA ./path_to_the_east_texture
+NO ./textures/tile000.png
+                SO              ./textures/tile001.png
+WE ./textures/tile002.png
+   EA ./textures/tile003.png
 
-F 220,100,0
+F 10,100,0
 
 C 225,30,0
 
