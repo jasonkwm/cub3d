@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 14:47:46 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/14 15:45:25 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,15 @@ int		parse_file(t_variables *variables, char *file_name);
 
 // parse_textures.c
 
-int		miss_textures(t_texture *texture);
 void	check_n_append(void **check, char *trimmed, char c);
 void	get_texture(t_texture *texture, char *line, char first_char);
 void	check_textures(void **check, char *get_path, char c);
-int	only_digits(char *str);
 void	check_rgb(void **check, char *texture);
+void	check_texture_path(char **check, char *texture);
+
+// prase_textures_utils.c
+int		miss_textures(t_texture *texture);
+int		only_digits(char *str);
 
 // parse_map.c
 
