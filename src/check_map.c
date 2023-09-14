@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:39:14 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/14 10:05:34 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	check_valid_characters(t_map *map)
 				player++;
 				map->pX = j;
 				map->pY = i;
+				map->facing_pos = map->map[i][j];
 			}
 		}
 	}
