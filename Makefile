@@ -4,7 +4,7 @@ SRCS_DIR	:= ./src
 OBJS_DIR	:= ./obj
 
 SRCS		:=	main.c  inits.c exits.c free.c \
-				main_parser.c parse_textures.c \
+				main_parser.c parse_textures.c parse_textures_utils.c\
 				parse_map.c parse_map_utils.c check_map.c \
 				
 OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
