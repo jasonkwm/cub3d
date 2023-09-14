@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 15:28:08 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/14 15:45:31 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param check 
  * @param texture 
  */
-void	check_path(char **check, char *texture)
+void	check_texture_path(char **check, char *texture)
 {
 	int	fd;
 
@@ -72,7 +72,7 @@ void	check_textures(void **check, char *get_path, char c)
 	if (c == 'F' || c == 'C')
 		check_rgb(check, get_path);
 	else
-		check_path((char **)check, get_path);
+		check_texture_path((char **)check, get_path);
 }
 
 /**
