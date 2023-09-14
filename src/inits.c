@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/13 16:50:35 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/14 23:37:44 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,6 @@ void	init_map(t_map *map)
 	map->map = NULL;
 }
 
-// void	init_screen(t_img *screen)
-// {
-// 	screen->addr = 0;
-// 	screen->bpp = 0;
-// 	screen->endian = 0;
-// 	screen->height = 0;
-// 	screen->img = 0;
-// 	screen->line_length = 0;
-// 	screen->mlx = 0;
-// 	screen->width = 0;
-// 	screen->win = 0;
-// }
-
 int	init_mlx(t_variables *var)
 {
 	t_img	mlx;
@@ -62,10 +49,21 @@ int	init_mlx(t_variables *var)
 	return (0);
 }
 
-// void	init_raycast(t_variables *variables)
-// {
+void	init_raycast(t_variables *var)
+{
+	t_raycast	rc;
 
-// }
+	ft_bzero(&rc, sizeof(rc));
+	var->rc = rc;
+	var->rc.pos_x = var->map.px;
+	var->rc.pos_y = var->map.py;
+	var->rc.dir_x = -1;
+	var->rc.dir_y = 0;
+	var->rc.plane_x = 0;
+	var->rc.plane_y = 0.66;
+	var->rc.speed = 0.1;
+	var->rc.rot_speed = M_PI / 48;
+}
 
 void	init_variables(t_variables *variables)
 {
@@ -74,7 +72,7 @@ void	init_variables(t_variables *variables)
 	if (init_mlx(variables) == 1)
 		return ;
 	variables->window = NULL;
-	// init_raycast(&variables);
+	init_raycast(variables);
 	init_texture(&variables->texture);
 	init_map(&variables->map);
 }

@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/13 16:25:52 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/14 23:41:57 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ void	check_walls(t_map *map)
 	flood_inside_map(map, &invalid);
 }
 
-
 void	check_valid_characters(t_map *map)
 {
-	int		player;
-	int		i;
-	int		j;
+	int	player;
+	int	i;
+	int	j;
 
 	i = -1;
 	player = 0;
@@ -44,9 +43,11 @@ void	check_valid_characters(t_map *map)
 				player++;
 				map->px = j;
 				map->py = i;
+				// printf("%c\n", map->map[map->px][map->py]);
 			}
 		}
 	}
+	// map->pos = map->map[j][i];
 	if (player == 0 || player > 1)
 		exit_with_message("Invalid Number of Players.\n", 8);
 }

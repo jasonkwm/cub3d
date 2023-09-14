@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 01:05:50 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/14 23:30:05 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
 # define CURRENT_EXIT_CODE 9
-# include "libft.h"
+# include "../libft/libft.h"
 # include <fcntl.h>
 # include <math.h>
 # include <mlx.h>
@@ -58,6 +58,7 @@ typedef struct s_map
 	int					width;
 	int					px;
 	int					py;
+	char				pos;
 }						t_map;
 typedef struct s_raycast
 {
@@ -84,6 +85,8 @@ typedef struct s_raycast
 	int					line_height;
 	int					start;
 	int					end;
+	int					rgb_f[3];
+	int					rgb_c[3];
 	double				speed;
 	double				rot_speed;
 }						t_raycast;
@@ -94,6 +97,7 @@ typedef struct s_variables
 	double				max_height;
 	t_img				*screen;
 	void				*window;
+	t_raycast			rc;
 	t_texture			texture;
 	t_map				map;
 }						t_variables;
@@ -127,7 +131,7 @@ void	build_map(t_variables *variables,
 
 void					malloc_and_fill_map(t_map *map, t_list_map **list_map);
 void					strlcpy_custom(char *dst, const char *src, int size);
-void					lstadd_back(t_list_map **lst, t_list_map *new);
+void					lstadd_back(t_list_map **lst, t_list_map *newl);
 
 // check_map.c
 void					check_valid_characters(t_map *map);
