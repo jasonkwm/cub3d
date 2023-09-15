@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 15:45:25 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/15 16:21:43 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define WINDOW_HEIGHT 1080
 # define WINDOW_WIDTH 1920
 # define CURRENT_EXIT_CODE 9
-# define TEXTURE_DIMENSION 64
+# define TEXTURE_DIMENSION 32
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -98,6 +98,12 @@ void	check_valid_characters(t_map *map);
 void	check_walls(t_map *map);
 void	flood_field(t_map *map, int curRow, int curCol, int *invalid);
 void	flood_inside_map(t_map *map, int *invalid);
+
+// hooks.c
+
+int		key_hook(int keycode, t_variables *variables);
+void	move_player(int keycode, t_variables *variables);
+void	move_camera(int keycode, t_variables *variables);
 
 // free.c
 
