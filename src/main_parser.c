@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/15 00:15:07 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/16 01:47:41 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,8 @@ int	parse_file(t_variables *variables, char *filename)
 		free(line);
 		line = get_next_line(fd);
 	}
-	build_map(variables, &list_map);
+	if (build_map(variables, &list_map) == 1)
+		exit_with_message("Error: Parsing Error.\n", 2);
 	free_list_map(&list_map);
 	close(fd);
 	return (0);

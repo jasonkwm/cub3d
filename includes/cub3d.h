@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/15 00:16:37 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/16 01:47:21 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void					get_texture(t_texture *texture, char *line,
 void					get_map(char *line, t_list_map **list_map);
 void	get_map_size(t_variables *variables,
 					t_list_map **list_map);
-void	build_map(t_variables *variables,
+int		build_map(t_variables *variables,
 				t_list_map **list_map);
 
 // parse_map_utils.c
@@ -143,6 +143,7 @@ void					flood_inside_map(t_map *map, int *invalid);
 // utils.c
 
 int						miss_textures(t_texture *texture);
+int						parse_rgb(char *line, int *rgb);
 
 // free.c
 

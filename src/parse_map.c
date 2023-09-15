@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/15 16:01:40 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/16 01:50:33 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,20 @@ void	get_map(char *line, t_list_map **list_map)
 	lstadd_back(list_map, new_node);
 }
 
+void	rotate(t_variables *var, double rad)
+{
+	double	old_dir_x;
+	double	old_plane_x;
+
+	old_dir_x = var->rc.dir_x;
+	old_plane_x = var->rc.plane_x;
+	var->rc.dir_x = var->rc.dir_x * cos(rad) - var->rc.dir_y * sin(rad);
+	var->rc.dir_y = old_dir_x = sin(rad) + var->rc.dir_y * cos(rad);
+	var->rc.plane_x = var->rc.plane_x * cos(rad) - var->rc.plane_y * sin(rad);
+	var->rc.plane_y = old_plane_x * sin(rad) + var->rc.plane_y * cos(rad);
+	draw_img(var);
+}
+
 int	spawn_point(t_variables *var)
 {
 	double	rad;
@@ -57,15 +71,18 @@ int	spawn_point(t_variables *var)
 		rad = M_PI;
 	else if (var->map.pos == 'W')
 		rad = M_PI * 1.5;
-	// rotate(var, rad);
+	rotate(var, rad);
 	return (0);
 }
 
-void	build_map(t_variables *variables, t_list_map **list_map)
+int	build_map(t_variables *variables, t_list_map **list_map)
 {
 	get_map_size(variables, list_map);
 	malloc_and_fill_map(&variables->map, list_map);
 	check_valid_characters(&variables->map);
 	check_walls(&variables->map);
+	if (!parse_rgb(variables->texture.ceiling, variables->rc.rgb_c) || !parse_rgb(variables->texture.floor, variables->rc.rgb_f))
+		return (1);
 	spawn_point(variables);
+	return (0);
 }

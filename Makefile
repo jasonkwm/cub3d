@@ -6,6 +6,7 @@ OBJS_DIR	:= ./obj
 SRCS		:=	main.c  inits.c exits.c free.c \
 				main_parser.c parse_utils.c parse_textures.c \
 				parse_map.c parse_map_utils.c check_map.c \
+				draw.c \
 				
 OBJS		:= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
