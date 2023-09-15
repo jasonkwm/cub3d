@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 23:30:05 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:16:37 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	build_map(t_variables *variables,
 
 void					malloc_and_fill_map(t_map *map, t_list_map **list_map);
 void					strlcpy_custom(char *dst, const char *src, int size);
-void					lstadd_back(t_list_map **lst, t_list_map *newl);
+void					lstadd_back(t_list_map **lst, t_list_map *new);
 
 // check_map.c
 void					check_valid_characters(t_map *map);

@@ -6,13 +6,11 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/13 20:39:35 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/15 16:01:40 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-
 
 void	get_map_size(t_variables *variables, t_list_map **list_map)
 {
@@ -46,10 +44,28 @@ void	get_map(char *line, t_list_map **list_map)
 	lstadd_back(list_map, new_node);
 }
 
+int	spawn_point(t_variables *var)
+{
+	double	rad;
+
+	rad = 0;
+	if (var->map.pos == 'N')
+		return (0);
+	else if (var->map.pos == 'E')
+		rad = M_PI / 2;
+	else if (var->map.pos == 'S')
+		rad = M_PI;
+	else if (var->map.pos == 'W')
+		rad = M_PI * 1.5;
+	// rotate(var, rad);
+	return (0);
+}
+
 void	build_map(t_variables *variables, t_list_map **list_map)
 {
 	get_map_size(variables, list_map);
 	malloc_and_fill_map(&variables->map, list_map);
 	check_valid_characters(&variables->map);
 	check_walls(&variables->map);
+	spawn_point(variables);
 }

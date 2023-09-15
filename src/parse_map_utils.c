@@ -6,13 +6,13 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:57:09 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 21:27:33 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:12:42 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	lstadd_back(t_list_map **lst, t_list_map *newl)
+void	lstadd_back(t_list_map **lst, t_list_map *new)
 {
 	t_list_map	*temp;
 
@@ -21,10 +21,10 @@ void	lstadd_back(t_list_map **lst, t_list_map *newl)
 		temp = *lst;
 		while (temp->next != NULL && temp != NULL)
 			temp = temp->next;
-		temp->next = newl;
+		temp->next = new;
 	}
 	else
-		*lst = newl;
+		*lst = new;
 }
 
 void	strlcpy_custom(char *dst, const char *src, int size)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/11 17:04:03 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/15 00:15:07 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /**
  * @brief Checks for valid character \n
- * 		  check if found map & check if map has ended \n
- * 		  check if map found before all texture \n
- * 		  char *slp = save line space;
+ * 			check if found map & check if map has ended \n
+ * 			check if map found before all texture \n
+ * 			char *slp = save line space;
  * 
  * @param first_char first character of line read
  * @param found_map tracks map, 0 = no, 1 = yes, 2 = map ended

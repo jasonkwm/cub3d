@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 23:41:57 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:19:02 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,10 @@ void	check_valid_characters(t_map *map)
 				player++;
 				map->px = j;
 				map->py = i;
-				// printf("%c\n", map->map[map->px][map->py]);
 			}
 		}
 	}
-	// map->pos = map->map[j][i];
+	map->pos = map->map[map->py][map->px];
 	if (player == 0 || player > 1)
 		exit_with_message("Invalid Number of Players.\n", 8);
 }
