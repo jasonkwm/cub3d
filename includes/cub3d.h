@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/16 01:47:21 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/17 02:46:13 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,21 @@ typedef struct s_raycast
 	double				rot_speed;
 }						t_raycast;
 
+typedef struct s_tex
+{
+	t_img				n;
+	t_img				e;
+	t_img				s;
+	t_img				w;
+}						t_tex;
+
 typedef struct s_variables
 {
 	double				max_width;
 	double				max_height;
 	t_img				*screen;
 	void				*window;
+	t_tex				tex_img;
 	t_raycast			rc;
 	t_texture			texture;
 	t_map				map;
@@ -124,7 +133,7 @@ void					get_texture(t_texture *texture, char *line,
 void					get_map(char *line, t_list_map **list_map);
 void	get_map_size(t_variables *variables,
 					t_list_map **list_map);
-int		build_map(t_variables *variables,
+int	build_map(t_variables *variables,
 				t_list_map **list_map);
 
 // parse_map_utils.c
@@ -139,6 +148,19 @@ void					check_walls(t_map *map);
 void					flood_field(t_map *map, int curRow, int curCol,
 							int *invalid);
 void					flood_inside_map(t_map *map, int *invalid);
+
+// draw.c
+void					draw_img(t_variables *var);
+
+// draw_utils.c
+void					pix_draw(t_variables *var, int x, int y, int color);
+int						set_img(t_variables *var);
+
+//raycast.c
+void					ray_pos(t_variables *var, int x);
+void					ray_len(t_raycast *rc);
+void					dda(t_variables *var);
+void					set_projection(t_variables *var);
 
 // utils.c
 
