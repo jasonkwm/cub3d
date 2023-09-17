@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/17 02:46:13 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/17 19:08:55 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ typedef struct s_raycast
 	int					rgb_c[3];
 	double				speed;
 	double				rot_speed;
+	double				wall_x;
+	int					tex_x;
+	int					tex_y;
+	double				tex_y_step;
 }						t_raycast;
 
 typedef struct s_tex
@@ -103,7 +107,7 @@ typedef struct s_variables
 {
 	double				max_width;
 	double				max_height;
-	t_img				*screen;
+	t_img				screen;
 	void				*window;
 	t_tex				tex_img;
 	t_raycast			rc;
@@ -155,6 +159,7 @@ void					draw_img(t_variables *var);
 // draw_utils.c
 void					pix_draw(t_variables *var, int x, int y, int color);
 int						set_img(t_variables *var);
+void					put_pix(t_img *img, int x, int y, int color);
 
 //raycast.c
 void					ray_pos(t_variables *var, int x);

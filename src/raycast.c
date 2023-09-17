@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:05:29 by nwai-kea          #+#    #+#             */
-/*   Updated: 2023/09/17 01:22:16 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/17 21:05:23 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	dda(t_variables *var)
 			var->rc.map_y += var->rc.step_y;
 			var->rc.side = 1;
 		}
-		if (var->map.map[var->rc.map_x][var->rc.map_y] == '1')
+		if (var->map.map[var->rc.map_y][var->rc.map_x] == '1')
 			var->rc.hit = 1;
 	}
 }

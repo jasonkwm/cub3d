@@ -6,7 +6,7 @@
 /*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 19:33:46 by nwai-kea          #+#    #+#             */
-/*   Updated: 2023/09/17 02:51:14 by nwai-kea         ###   ########.fr       */
+/*   Updated: 2023/09/17 20:08:08 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	pix_draw(t_variables *var, int x, int y, int color)
 
 	if (y < 0 || y > var->max_height - 1 || x < 0 || x > var->max_width - 1)
 		return ;
-	pix = var->screen->addr + (y * var->screen->line_length + x
-			* (var->screen->bpp / 8));
+	pix = var->screen.addr + (y * var->screen.line_length + x * (var->screen.bpp
+				/ 8));
 	*(unsigned int *)pix = color;
 }
 
@@ -28,8 +28,15 @@ int	path_to_img(t_img *img, char *path)
 	img->mlx = mlx_init();
 	if (!(img->mlx))
 		return (1);
-	if (ft_strstr(path, ".png"))
-		img->img = mlx_png_file_to_image();
+	img->img = mlx_xpm_file_to_image(img->mlx, path, &img->width, &img->height);
+	if (!(img->img))
+	{
+		printf("%s does not exist!\n", path);
+		return (1);
+	}
+	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length,
+			&img->endian);
+	return (0);
 }
 
 int	set_img(t_variables *var)
@@ -44,4 +51,12 @@ int	set_img(t_variables *var)
 	free(var->texture.south);
 	free(var->texture.west);
 	return (0);
+}
+
+void	put_pix(t_img *img, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = img->addr + (y * img->line_length + x * (img->bpp / 8));
+	*(unsigned int *)dst = color;
 }

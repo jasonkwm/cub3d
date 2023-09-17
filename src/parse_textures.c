@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nwai-kea <nwai-kea@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/09 12:04:41 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/17 19:48:34 by nwai-kea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /**
  * @brief Check if texture has been found \n
- * 		  and append texture path if not.
+ * 			and append texture path if not.
  * 
  * @param tex texture struct
  * @param check pointer to specific texture to append
