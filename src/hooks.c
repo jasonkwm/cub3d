@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:16:35 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:51:37 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // 13 = W, 0 = A, 1 = S, 2 = D
 // 126 = UP, 123 = LEFT, 125 = DOWN, 124 = RIGHT
-int	key_hook(int keycode, t_variables *variables)
+int	key_hook(int keycode, t_vars *variables)
 {
 	if (keycode == 53)
 		exit_program(variables, "K Bye.\n", 404);
@@ -27,7 +27,7 @@ int	key_hook(int keycode, t_variables *variables)
 
 
 // 13 = W, 0 = A, 1 = S, 2 = D
-void	move_player(int keycode, t_variables *variables)
+void	move_player(int keycode, t_vars *variables)
 {
 	mlx_clear_window(variables->mlx, variables->window);
 	if (keycode == 13)
@@ -43,7 +43,7 @@ void	move_player(int keycode, t_variables *variables)
 }
 
 // 126 = UP, 123 = LEFT, 125 = DOWN, 124 = RIGHT
-void	move_camera(int keycode, t_variables *variables)
+void	move_camera(int keycode, t_vars *variables)
 {
 	if (keycode == 126)
 		variables->map.pY += 32;

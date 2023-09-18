@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:44:25 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_map(t_map *map)
 	map->map = NULL;
 }
 
-void	init_variables(t_variables *variables)
+void	init_variables(t_vars *variables)
 {
 	variables->mlx = mlx_init();
 	variables->window = mlx_new_window(variables->mlx, WINDOW_WIDTH,

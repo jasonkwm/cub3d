@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:48:26 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param check 
  * @param texture 
  */
-void	check_texture_path(t_variables *vars, void **check, char *path)
+void	check_texture_path(t_vars *vars, void **check, char *path)
 {
 	int	texture_size;
 	
@@ -63,7 +63,7 @@ void	check_rgb(void **check, char *texture)
 		exit_with_message("Error: Invalid Color\n", 6);
 }
 
-void	check_textures(t_variables *vars, void **check, char *get_path, char c)
+void	check_textures(t_vars *vars, void **check, char *get_path, char c)
 {
 	if (c == 'F' || c == 'C')
 		check_rgb(check, get_path);
@@ -84,7 +84,7 @@ void	check_textures(t_variables *vars, void **check, char *get_path, char c)
  * @param trimmed trimmed string from parent
  * @param c first character of trimmed string
  */
-void	check_n_append(t_variables *vars, void **check, char *trimmed, char c)
+void	check_n_append(t_vars *vars, void **check, char *trimmed, char c)
 {
 	int		error;
 	char	*get_path;
@@ -111,7 +111,7 @@ void	check_n_append(t_variables *vars, void **check, char *trimmed, char c)
  * @param line line read
  * @param fc first character
  */
-void	get_texture(t_variables *vars, t_texture *tx, char *line, char fc)
+void	get_texture(t_vars *vars, t_texture *tx, char *line, char fc)
 {
 	char	*trimmed;
 

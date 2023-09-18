@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/12 15:34:24 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-void	get_map_size(t_variables *variables, t_list_map **list_map)
+void	get_map_size(t_vars *variables, t_list_map **list_map)
 {
 	size_t		height;
 	size_t		width;
@@ -46,7 +46,7 @@ void	get_map(char *line, t_list_map **list_map)
 	lstadd_back(list_map, new_node);
 }
 
-void	build_map(t_variables *variables, t_list_map **list_map)
+void	build_map(t_vars *variables, t_list_map **list_map)
 {
 	get_map_size(variables, list_map);
 	malloc_and_fill_map(&variables->map, list_map);

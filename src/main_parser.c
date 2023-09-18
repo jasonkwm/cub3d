@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:30:39 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
  * @param f_m found_map
  * @param l_m list_map
  */
-void	analyze_line(t_variables *var, char *line, int *f_m, t_list_map **l_m)
+void	analyze_line(t_vars *var, char *line, int *f_m, t_list_map **l_m)
 {
 	char	first_char;
 	char	*trimmed;
@@ -76,7 +76,7 @@ void	analyze_line(t_variables *var, char *line, int *f_m, t_list_map **l_m)
 		get_map(line, l_m);
 }
 
-int	parse_file(t_variables *variables, char *filename)
+int	parse_file(t_vars *variables, char *filename)
 {
 	int			fd;
 	int			found_map;
