@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:16:35 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/15 16:59:54 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:51:37 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ int	key_hook(int keycode, t_variables *variables)
 // 13 = W, 0 = A, 1 = S, 2 = D
 void	move_player(int keycode, t_variables *variables)
 {
-	void	*img;
-	int		size;
-
-	size = 64;
-
-	img = mlx_xpm_file_to_image(variables->mlx, "./textures/tile000.xpm", &size, &size);
 	mlx_clear_window(variables->mlx, variables->window);
 	if (keycode == 13)
 		variables->map.pY -= 1;
@@ -44,7 +38,7 @@ void	move_player(int keycode, t_variables *variables)
 		variables->map.pY += 1;
 	if (keycode == 2)
 		variables->map.pX += 1;
-	mlx_put_image_to_window(variables->mlx, variables->window, img, variables->map.pX * 32, variables->map.pY * 32);
+	mlx_put_image_to_window(variables->mlx, variables->window, variables->texture.north, variables->map.pX * 32, variables->map.pY * 32);
 	printf("px,py: %i, %i\n", variables->map.pX,  variables->map.pY);
 }
 

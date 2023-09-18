@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/15 16:21:43 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:38:30 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define WINDOW_HEIGHT 1080
 # define WINDOW_WIDTH 1920
 # define CURRENT_EXIT_CODE 9
-# define TEXTURE_DIMENSION 32
+# define TEXTURE_SIZE 64
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -71,11 +71,11 @@ int		parse_file(t_variables *variables, char *file_name);
 
 // parse_textures.c
 
-void	check_n_append(void **check, char *trimmed, char c);
-void	get_texture(t_texture *texture, char *line, char first_char);
-void	check_textures(void **check, char *get_path, char c);
+void	check_n_append(t_variables *vars, void **check, char *trimmed, char c);
+void	get_texture(t_variables *vars, t_texture *tx, char *line, char first_char);
+void	check_textures(t_variables *vars, void **check, char *get_path, char c);
 void	check_rgb(void **check, char *texture);
-void	check_texture_path(char **check, char *texture);
+void	check_texture_path(t_variables *vars, void **check, char *path);
 
 // prase_textures_utils.c
 int		miss_textures(t_texture *texture);

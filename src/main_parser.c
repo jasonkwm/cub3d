@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 12:16:41 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:30:39 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	analyze_line(t_variables *var, char *line, int *f_m, t_list_map **l_m)
 	if (first_char == '\0')
 		return ;
 	if (miss_texture)
-		get_texture(&var->texture, line, first_char);
+		get_texture(var, &var->texture, line, first_char);
 	else
 		get_map(line, l_m);
 }
