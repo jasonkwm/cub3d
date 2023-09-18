@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:19:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 13:04:00 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	pre_valid_check(char first_char, int *found_map, int miss_texture)
  * @param f_m found_map
  * @param l_m list_map
  */
-void	analyze_line(t_vars *var, char *line, int *f_m, t_list_map **l_m)
+void	analyze_line(t_vars *vars, char *line, int *f_m, t_list_map **l_m)
 {
 	char	first_char;
 	char	*trimmed;
@@ -66,17 +66,17 @@ void	analyze_line(t_vars *var, char *line, int *f_m, t_list_map **l_m)
 	trimmed = ft_strtrim(line, SPACES);
 	first_char = trimmed[0];
 	free(trimmed);
-	miss_texture = miss_textures(&var->texture);
+	miss_texture = miss_textures(&vars->texture);
 	pre_valid_check(first_char, f_m, miss_texture);
 	if (first_char == '\0')
 		return ;
 	if (miss_texture)
-		get_texture(var, &var->texture, line, first_char);
+		get_texture(vars, &vars->texture, line, first_char);
 	else
 		get_map(line, l_m);
 }
 
-int	parse_file(t_vars *variables, char *filename)
+int	parse_file(t_vars *vars, char *filename)
 {
 	int			fd;
 	int			found_map;
@@ -91,11 +91,11 @@ int	parse_file(t_vars *variables, char *filename)
 	line = get_next_line(fd);
 	while (line)
 	{
-		analyze_line(variables, line, &found_map, &list_map);
+		analyze_line(vars, line, &found_map, &list_map);
 		free(line);
 		line = get_next_line(fd);
 	}
-	build_map(variables, &list_map);
+	build_map(vars, &list_map);
 	free_list_map(&list_map);
 	close(fd);
 	return (0);

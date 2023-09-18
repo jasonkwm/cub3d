@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 09:43:46 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:59:28 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
  */
 void	check_texture_path(t_vars *vars, void **check, char *path)
 {
-	int	texture_size;
+	int	tx_size;
 	
-	texture_size = 64;
-	*check = mlx_xpm_file_to_image(vars->mlx, path, &texture_size, &texture_size);
+	tx_size = 64;
+	*check = mlx_xpm_file_to_image(vars->mlx, path, &tx_size, &tx_size);
 	free(path);
 	if (*check == NULL)
 		exit_with_message("Error: Invalid Texture\n", 6);

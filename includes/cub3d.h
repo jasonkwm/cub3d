@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 13:05:24 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_map
 	char	facing_pos;
 }	t_map;
 
-typedef struct s_variables
+typedef struct s_vars
 {
 	void		*mlx;
 	void		*window;
@@ -61,13 +61,13 @@ typedef struct s_variables
 
 // inits.c
 
-void	init_variables(t_vars *variables);
+void	init_variables(t_vars *vars);
 void	init_texture(t_texture *texture);
 void	init_map(t_map *map);
 
 // main_parser.c
 
-int		parse_file(t_vars *variables, char *file_name);
+int		parse_file(t_vars *vars, char *file_name);
 
 // parse_textures.c
 
@@ -84,8 +84,8 @@ int		only_digits(char *str);
 // parse_map.c
 
 void	get_map(char *line, t_list_map **list_map);
-void	get_map_size(t_vars *variables, t_list_map **list_map);
-void	build_map(t_vars *variables, t_list_map **list_map);
+void	get_map_size(t_vars *vars, t_list_map **list_map);
+void	build_map(t_vars *vars, t_list_map **list_map);
 
 // parse_map_utils.c
 
@@ -101,9 +101,9 @@ void	flood_inside_map(t_map *map, int *invalid);
 
 // hooks.c
 
-int		key_hook(int keycode, t_vars *variables);
-void	move_player(int keycode, t_vars *variables);
-void	move_camera(int keycode, t_vars *variables);
+int		key_hook(int keycode, t_vars *vars);
+void	move_player(int keycode, t_vars *vars);
+void	move_camera(int keycode, t_vars *vars);
 
 // free.c
 
@@ -114,7 +114,7 @@ void	free_list_map(t_list_map **list_map);
 // exits.c
 
 void	exit_with_message(char *message, int exit_code);
-void	exit_program(t_vars *variables, char *message, int exit_code);
-int		exit_on_click(t_vars *variables);
+void	exit_program(t_vars *vars, char *message, int exit_code);
+int		exit_on_click(t_vars *vars);
 
 #endif
