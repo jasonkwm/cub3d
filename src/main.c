@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 15:56:18 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 16:09:13 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	main(int ac, char **av)
 		exit_with_message("Invalid Number of Arguments.\n", 1);
 	init_vars(&vars);
 	parse_file(&vars, av[1]);
-
 	mlx_hook(vars.window, 2, 2, key_hook, &vars);
 	mlx_hook(vars.window, 17, (1L << 0), exit_on_click, &vars);
 	mlx_loop(vars.mlx);
