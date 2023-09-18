@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 13:03:05 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 15:56:18 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,48 @@ void	init_map(t_map *map)
 	map->map = NULL;
 }
 
-void	init_variables(t_vars *vars)
+int	init_mlx(t_vars *var)
 {
-	vars->mlx = mlx_init();
-	vars->window = mlx_new_window(vars->mlx, WINDOW_WIDTH,
-						WINDOW_HEIGHT, "Pet Puppy 3D.");
-	init_texture(&vars->texture);
-	init_map(&vars->map);
+	t_img	mlx;
+
+	ft_bzero(&mlx, sizeof(mlx));
+	var->screen = mlx;
+	var->screen.mlx = mlx_init();
+	if (!(var->screen.mlx))
+		return (1);
+	var->screen.win = mlx_new_window(var->screen.mlx, (int)var->max_width,
+			(int)var->max_height, "cub3d");
+	var->screen.img = mlx_new_image(var->screen.mlx, (int)var->max_width,
+			(int)var->max_height);
+	var->screen.addr = mlx_get_data_addr(var->screen.img, &var->screen.bpp,
+			&var->screen.line_length, &var->screen.endian);
+	return (0);
+}
+
+void	init_raycast(t_vars *var)
+{
+	t_raycast	rc;
+
+	ft_bzero(&rc, sizeof(rc));
+	var->rc = rc;
+	var->rc.pos_x = var->map.pX + 0.5;
+	var->rc.pos_y = var->map.pY + 0.5;
+	var->rc.dir_x = -1;
+	var->rc.dir_y = 0;
+	var->rc.plane_x = 0;
+	var->rc.plane_y = 0.66;
+	var->rc.speed = 0.1;
+	var->rc.rot_speed = M_PI / 48;
+}
+
+void	init_vars(t_vars *variables)
+{
+	variables->max_width = 1920;
+	variables->max_height = 1080;
+	if (init_mlx(variables) == 1)
+		return ;
+	variables->window = NULL;
+	init_texture(&variables->texture);
+	init_map(&variables->map);
+	init_raycast(variables);
 }

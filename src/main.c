@@ -6,11 +6,20 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 13:03:29 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 15:56:18 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h" 
+#include "cub3d.h"
+
+int	destroy_window(t_vars *var)
+{
+	free_texture(&var->texture);
+	free_map(var->map.map);
+	mlx_destroy_window(var->screen.mlx, var->screen.win);
+	exit(0);
+	return (1);
+}
 
 void	print_cub(t_vars *vars)
 {
@@ -38,7 +47,7 @@ int	main(int ac, char **av)
 	
 	if (ac != 2)
 		exit_with_message("Invalid Number of Arguments.\n", 1);
-	init_variables(&vars);
+	init_vars(&vars);
 	parse_file(&vars, av[1]);
 
 	mlx_hook(vars.window, 2, 2, key_hook, &vars);
