@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 13:05:24 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/18 18:05:18 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ typedef struct s_list_map
 
 typedef struct s_texture
 {
-	char	*north;
-	char	*south;
-	char	*east;
-	char	*west;
+	void	*north;
+	void	*south;
+	void	*east;
+	void	*west;
 	int		*floor;
 	int		*ceiling;
 }	t_texture;
