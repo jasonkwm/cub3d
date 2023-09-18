@@ -19,7 +19,7 @@ MFLAGS 		:= -framework OpenGL -framework AppKit
 # -l(ft) to link library file. l replaces lib
 # -I is to look for header file in folder
 LIB_FT		:= -L libft -lft
-LIB_MLX		:= -L mlx -lmlx -framework OpenGL -framework AppKit
+LIB_MLX		:= -L mlx -lmlx $(MFLAGS)
 
 LIBRARY		:= $(LIB_FT) $(LIB_MLX)
 INCLUDES	:= -I mlx -I libft -I includes
