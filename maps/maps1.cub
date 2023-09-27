@@ -1,7 +1,7 @@
-NO ./textures/xpm/tile102.xpm
-                SO              ./textures/xpm/tile104.xpm
-WE ./textures/xpm/tile106.xpm
-   EA ./textures/xpm/tile107.xpm
+NO ./textures/xpm/tile096.xpm
+                SO              ./textures/xpm/tile036.xpm
+WE ./textures/xpm/tile020.xpm
+   EA ./textures/xpm/tile064.xpm
 
 F 10,100,0
 

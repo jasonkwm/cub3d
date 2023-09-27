@@ -6,15 +6,15 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 18:05:18 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/27 11:50:26 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 # define SPACES " \f\v\t\r\n"
-# define WINDOW_HEIGHT 1080
-# define WINDOW_WIDTH 1920
+# define WINDOW_HEIGHT 720
+# define WINDOW_WIDTH 1280
 # define CURRENT_EXIT_CODE 9
 # define TEXTURE_SIZE 64
 # include <stdio.h>
