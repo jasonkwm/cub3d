@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:41:42 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 12:56:01 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/27 13:02:31 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	exit_with_message(char *message, int exit_code)
 
 void	exit_program(t_vars *variables, char *message, int exit_code)
 {
-	mlx_destroy_window(variables->mlx, variables->window);
+	mlx_destroy_window(variables->mlx, variables->win);
 	exit_with_message(message, exit_code);
 }
 

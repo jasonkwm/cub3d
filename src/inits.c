@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/18 13:03:05 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/27 13:02:31 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	init_map(t_map *map)
 void	init_variables(t_vars *vars)
 {
 	vars->mlx = mlx_init();
-	vars->window = mlx_new_window(vars->mlx, WINDOW_WIDTH,
+	vars->win = mlx_new_window(vars->mlx, WINDOW_WIDTH,
 						WINDOW_HEIGHT, "Pet Puppy 3D.");
 	init_texture(&vars->texture);
 	init_map(&vars->map);

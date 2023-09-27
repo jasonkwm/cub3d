@@ -1,0 +1,23 @@
+NO ./textures/xpm/tile096.xpm
+                SO              ./textures/xpm/tile036.xpm
+WE ./textures/xpm/tile020.xpm
+   EA ./textures/xpm/tile064.xpm
+
+F 10,100,0
+
+C 225,30,0
+
+
+1111111111
+1000000001
+1001000001
+1001100001
+1001000001
+1000000001
+1000010N01
+1000010001
+1111111111
+
+
+
+

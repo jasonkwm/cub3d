@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/27 11:50:26 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/27 13:01:08 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_map
 typedef struct s_vars
 {
 	void		*mlx;
-	void		*window;
+	void		*win;
 	t_texture	texture;
 	t_map		map;
 }	t_vars;
