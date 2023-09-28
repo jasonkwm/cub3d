@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:39:47 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/27 15:26:27 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:47:30 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	put_walls(t_vars *vars)
 		while (map[i][++j])
 		{
 			if (map[i][j] == '1')
-				pixel_display(vars, j, i, 12);
+				pixel_display(vars, j, i, vars->map_2d.tileS);
 		}
 	}
 }
@@ -55,12 +55,12 @@ void	temp_player(t_vars *vars)
 	int	pY;
 
 	a = -1;
-	pX = vars->map.pX * 12;
-	pY = vars->map.pY * 12;
+	pX = vars->map_2d.pX;
+	pY = vars->map_2d.pY;
 	while (++a < 4)
 	{
 		b = -1;
 		while (++b < 4)
-			mlx_pixel_put(vars->mlx, vars->win, pX + b, pY + a, 0xFF0000);
+			mlx_pixel_put(vars->mlx, vars->win, pX + b , pY + a, 0xFF0000);
 	}
 }

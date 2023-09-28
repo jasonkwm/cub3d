@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/27 15:27:23 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:42:03 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,24 @@ typedef struct s_map
 	char	facing_pos;
 }	t_map;
 
+typedef struct s_map_2d
+{
+	int	maxSize;
+	int	tileS;
+	int	pX;
+	int	pY;
+}	t_map_2d;
+
 typedef struct s_vars
 {
 	void		*mlx;
 	void		*win;
 	t_texture	texture;
 	t_map		map;
+	t_map_2d	map_2d;
 }	t_vars;
+
+
 
 // inits.c
 
@@ -86,6 +97,7 @@ int		only_digits(char *str);
 void	get_map(char *line, t_list_map **list_map);
 void	get_map_size(t_vars *vars, t_list_map **list_map);
 void	build_map(t_vars *vars, t_list_map **list_map);
+void	get_map_2d_specs(t_vars *vars);
 
 // parse_map_utils.c
 
