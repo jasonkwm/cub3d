@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 14:42:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/27 14:04:31 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	mini_main(t_vars *vars);
 void	print_cub(t_vars *vars);
-void	put_walls(t_vars *vars);
+void	put_walls_2d(t_vars *vars);
 
 int	main(int ac, char **av)
 {
@@ -34,10 +34,8 @@ int	main(int ac, char **av)
 
 void	mini_main(t_vars *vars)
 {
-	put_walls(vars);
-	temp_player(vars);
-	mlx_put_image_to_window(vars->mlx, vars->win,
-		vars->texture.north, vars->map.pX * 32, vars->map.pY * 32);
+	put_walls_2d(vars);
+	put_player_2d(vars);
 	mlx_hook(vars->win, 2, 2, key_hook, vars);
 	mlx_hook(vars->win, 17, (1L << 0), exit_on_click, vars);
 	mlx_loop(vars->mlx);

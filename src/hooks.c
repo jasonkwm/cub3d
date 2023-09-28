@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:16:35 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:48:45 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	key_hook(int keycode, t_vars *vars)
 void	move_player(int keycode, t_vars *vars)
 {
 	mlx_clear_window(vars->mlx, vars->win);
-	put_walls(vars);
+	put_walls_2d(vars);
 	if (keycode == 13)
 			vars->map_2d.pY -= vars->map_2d.tileS / 2;
 	if (keycode == 0)
@@ -39,7 +39,7 @@ void	move_player(int keycode, t_vars *vars)
 			vars->map_2d.pY += vars->map_2d.tileS / 2;
 	if (keycode == 2)
 			vars->map_2d.pX += vars->map_2d.tileS / 2;
-		temp_player(vars);
+		put_player_2d(vars);
 	printf("px,py: %i, %i\n", vars->map_2d.pX,  vars->map_2d.pY);
 }
 

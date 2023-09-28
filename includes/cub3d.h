@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:42:03 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,8 @@ void	move_camera(int keycode, t_vars *vars);
 
 // 2d_map_display.c
 
-void	temp_player(t_vars *vars);
-void	put_walls(t_vars *vars);
+void	put_player_2d(t_vars *vars);
+void	put_walls_2d(t_vars *vars);
 void	pixel_display(t_vars *vars, int x, int y, int pace);;
 
 // free.c
