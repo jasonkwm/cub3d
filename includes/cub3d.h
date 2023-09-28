@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 17:03:45 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	flood_inside_map(t_map *map, int *invalid);
 // hooks.c
 
 int		key_hook(int keycode, t_vars *vars);
-void	move_player(int keycode, t_vars *vars);
+void	move_player_2d(int keycode, t_vars *vars);
 void	move_camera(int keycode, t_vars *vars);
 
 // 2d_map_display.c

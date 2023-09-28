@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:16:35 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 17:03:45 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	key_hook(int keycode, t_vars *vars)
 	if (keycode == 53)
 		exit_program(vars, "K Bye.\n", 404);
 	if (keycode == 0 || keycode == 2 || keycode == 1 || keycode == 13)
-		move_player(keycode, vars);
+		move_player_2d(keycode, vars);
 	// if (keycode == 126 || keycode == 125 || keycode == 124 || keycode == 123)
 	// 	ft_move_enemy(keycode, vars);
 	return (0);
@@ -27,7 +27,7 @@ int	key_hook(int keycode, t_vars *vars)
 
 
 // 13 = W, 0 = A, 1 = S, 2 = D
-void	move_player(int keycode, t_vars *vars)
+void	move_player_2d(int keycode, t_vars *vars)
 {
 	mlx_clear_window(vars->mlx, vars->win);
 	put_walls_2d(vars);
