@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:39:47 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:59:42 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:06:45 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	pixel_display(t_vars *vars, int x, int y, int pace)
 
 void	put_player_2d(t_vars *vars)
 {
-	int	a;
-	int	b;
-	int	pX;
-	int	pY;
+	float	a;
+	float	b;
+	float	pX;
+	float	pY;
 
 	a = -1;
 	pX = vars->map_2d.pX;

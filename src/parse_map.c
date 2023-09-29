@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 16:41:55 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:17:55 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	build_map(t_vars *vars, t_list_map **list_map)
 
 void	get_map_2d_specs(t_vars *vars)
 {
-	int	biggest;
+	float	biggest;
 
 	if (vars->map.width > vars->map.height)
 		biggest = vars->map.width;
 	else
 		biggest = vars->map.height;
-	vars->map_2d.tileS =  200 / biggest;
+	vars->map_2d.tileS =  (float)(200 / biggest);
 	vars->map_2d.pX = vars->map.pX * vars->map_2d.tileS;
 	vars->map_2d.pY = vars->map.pY * vars->map_2d.tileS;
 	vars->map_2d.maxSize = biggest * vars->map_2d.tileS;

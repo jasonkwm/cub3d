@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:16:35 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 17:03:45 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/28 17:07:32 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	move_player_2d(int keycode, t_vars *vars)
 	if (keycode == 2)
 			vars->map_2d.pX += vars->map_2d.tileS / 2;
 		put_player_2d(vars);
-	printf("px,py: %i, %i\n", vars->map_2d.pX,  vars->map_2d.pY);
+	printf("px,py: %f, %f\n", vars->map_2d.pX,  vars->map_2d.pY);
 }
 
 // 126 = UP, 123 = LEFT, 125 = DOWN, 124 = RIGHT
