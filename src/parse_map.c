@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 10:11:15 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/29 11:17:55 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:28:59 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	get_map_2d_specs(t_vars *vars)
 		biggest = vars->map.width;
 	else
 		biggest = vars->map.height;
-	vars->map_2d.tileS =  (float)(200 / biggest);
-	vars->map_2d.pX = vars->map.pX * vars->map_2d.tileS;
-	vars->map_2d.pY = vars->map.pY * vars->map_2d.tileS;
-	vars->map_2d.maxSize = biggest * vars->map_2d.tileS;
+	vars->map_2d.tile_size =  (float)(200 / biggest);
+	vars->map_2d.px = vars->map.px * vars->map_2d.tile_size;
+	vars->map_2d.py = vars->map.py * vars->map_2d.tile_size;
+	vars->map_2d.max_size = biggest * vars->map_2d.tile_size;
 }

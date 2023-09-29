@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/29 11:20:50 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:29:53 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 typedef struct s_list_map
 {
-	char		*map_line;
+	char				*map_line;
 	struct s_list_map	*next;
 }	t_list_map;
 
@@ -47,20 +47,20 @@ typedef struct s_map
 	char	**map;
 	int		height;
 	int		width;
-	int		pX;
-	int		pY;
+	int		px;
+	int		py;
 	char	facing_pos;
 }	t_map;
 
 typedef struct s_map_2d
 {
-	int		maxSize;
-	float	tileS;
-	float	pX;
-	float	pY;
-	float	pDeltaX;
-	float	pDeltaY;
-	float	pAngle;
+	int		max_size;
+	float	tile_size;
+	float	px;
+	float	py;
+	float	p_delta_x;
+	float	p_delta_y;
+	float	p_angle;
 }	t_map_2d;
 
 typedef struct s_vars
@@ -71,8 +71,6 @@ typedef struct s_vars
 	t_map		map;
 	t_map_2d	map_2d;
 }	t_vars;
-
-
 
 // inits.c
 
@@ -125,7 +123,7 @@ void	move_camera(int keycode, t_vars *vars);
 
 void	put_player_2d(t_vars *vars);
 void	put_walls_2d(t_vars *vars);
-void	pixel_display(t_vars *vars, int x, int y, int pace);;
+void	pixel_display(t_vars *vars, int x, int y, int pace);
 
 // free.c
 

@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:16 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/14 10:05:34 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:28:26 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	check_valid_characters(t_map *map)
 			else if (ft_strchr("NSEW", map->map[i][j]))
 			{
 				player++;
-				map->pX = j;
-				map->pY = i;
+				map->px = j;
+				map->py = i;
 				map->facing_pos = map->map[i][j];
 			}
 		}

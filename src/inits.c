@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:45:20 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/29 11:20:22 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:28:57 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ void	init_map(t_map *map)
 {
 	map->height = 0;
 	map->width = 0;
-	map->pX = 0;
-	map->pY = 0;
+	map->px = 0;
+	map->py = 0;
 	map->map = NULL;
 }
 
 void init_2d(t_map_2d *map_2d)
 {
-	map_2d->maxSize = 0;
-	map_2d->tileS = 0;
-	map_2d->pX = 0;
-	map_2d->pY = 0;
-	map_2d->pDeltaX = 0;
-	map_2d->pDeltaY = 0;
-	map_2d->pAngle = 0;
+	map_2d->max_size = 0;
+	map_2d->tile_size = 0;
+	map_2d->px = 0;
+	map_2d->py = 0;
+	map_2d->p_delta_x = 0;
+	map_2d->p_delta_y = 0;
+	map_2d->p_angle = 0;
 }
