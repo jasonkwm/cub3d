@@ -6,7 +6,7 @@
 /*   By: jakoh <jakoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:22:54 by jakoh             #+#    #+#             */
-/*   Updated: 2023/09/28 17:03:45 by jakoh            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:20:50 by jakoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # define WINDOW_HEIGHT 720
 # define WINDOW_WIDTH 1280
 # define CURRENT_EXIT_CODE 9
-# define TEXTURE_SIZE 64
+# define TEXTURE_SIZE 32
+# define PI 3.1415926535
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -53,10 +54,13 @@ typedef struct s_map
 
 typedef struct s_map_2d
 {
-	int	maxSize;
-	int	tileS;
-	int	pX;
-	int	pY;
+	int		maxSize;
+	float	tileS;
+	float	pX;
+	float	pY;
+	float	pDeltaX;
+	float	pDeltaY;
+	float	pAngle;
 }	t_map_2d;
 
 typedef struct s_vars
